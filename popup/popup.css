@@ -3,7 +3,9 @@ body {
   min-height: 110px;
   text-align: center;
   background: #141414; 
-  padding: 5px;
+  padding: 15px;
+  margin: 0;
+  border: 3px solid #E50914;
 }
 
 .text {
