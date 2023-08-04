@@ -28,7 +28,6 @@
     },
     {
       "js" : ["init.js"],
-      "css": ["style.css"],
       "matches": ["*://www.netflix.com/*"]
     } 
   ]
