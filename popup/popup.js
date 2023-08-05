@@ -1,6 +1,6 @@
-import { STORAGE_KEY } from '../constants.js';
+import { IGNORE_ENABLED_KEY } from '../scripts/cacheKeys.js';
 
-(function() {
+(async () => {
   const $switch = document.querySelector("#swithTemplate").content.cloneNode(true);
   const $checkbox = $switch.querySelector("#switchInput");
 
@@ -8,14 +8,14 @@ import { STORAGE_KEY } from '../constants.js';
     chrome.storage.local.set({ [STORAGE_KEY]: event.currentTarget.checked});
   });
 
-  chrome.storage.local.get(STORAGE_KEY).then(cache => {
-    if (cache && cache[STORAGE_KEY] !== undefined) {
-      $checkbox.checked = cache[STORAGE_KEY];
-    } else {
-      $checkbox.checked = true;
-      chrome.storage.local.set({ [STORAGE_KEY]: true});
-    } 
+  const cache = await chrome.storage.local.get(IGNORE_ENABLED_KEY);
+  
+  if (cache && cache[STORAGE_KEY] !== undefined) {
+    $checkbox.checked = cache[STORAGE_KEY];
+  } else {
+    $checkbox.checked = true;
+    chrome.storage.local.set({ [STORAGE_KEY]: true});
+  } 
 
-    document.body.appendChild($switch);
-  });
+  document.body.appendChild($switch);
 })();
