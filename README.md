@@ -4,5 +4,4 @@ This extension allows you to ignore movies in the Netflix recommendation algorit
 The extension can be found [here]()
 
 ### Example
-![image](https://github.com/molotochok/netflix-recommendation-ignore-extension/assets/22146812/b50b20cd-e2bb-4247-9b24-f88c0977d2c0)
-
+![NetflixExtensionExample](https://github.com/molotochok/netflix-recommendation-ignore-extension/assets/22146812/bb21ce4d-7131-4cca-afbd-16788c1a719d)
